@@ -14,13 +14,89 @@
 		}
 
 		*::-webkit-scrollbar { display: none }
+
+		body {
+			position: relative;
+			width: 100vw;
+			height: 100vh;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+		}
+
+		h3 {
+			padding-left: 12px;
+			padding-right: 12px;
+		}
+
+		button {
+			padding: 3px 6px;
+			border: 1px solid black;
+			border-radius: 10%;
+			background: transparent;
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+		button:hover {
+			background: palegreen;
+		}
+
+		header {
+			width: 100%;
+			padding-left: 12px;
+			padding-right: 12px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		header div {
+			display: flex;
+			align-items: center;
+		}
+
+		main {
+			width: 100%;
+			height: 200px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		main div {
+			margin: 18px;
+		}
+
+		main input,
+		main h3 {
+			min-width: 300px;
+			padding: 5px 10px;
+			font-size: 20px;
+		}
+
+		footer {
+		}
     </style>
 </head>
 <body>
-	<header></header>
+	<header>
+		<div>
+			<button id="prev-survey" disabled><<</button>
+			<h3>Survey <span id="survey-num">1</span></h3>
+			<button id="next-survey" disabled>>></button>
+		</div>
+		<div>
+			<button id="del" disabled>DEL</button>
+		</div>
+	</header>
 	<main>
-		<div id="survey-question">
-			<input />
+		<div>
+			<input id="survey-question" placeholder="What is your survey question?" />
+		</div>
+		<div>
+			<input id="survey-ipt" />
 		</div>
 	</main>
 	<footer></footer>
