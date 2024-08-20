@@ -32,9 +32,9 @@
 
 		a, button {
 			margin: 0 5px;
-			padding: 3px 6px;
-			border: 1px solid black;
-			border-radius: 10%;
+			padding: 4px 12px;
+			border: 2px solid black;
+			border-radius: 8px;
 			color: black;
 			background: transparent;
 			font-size: 16px;
@@ -43,8 +43,14 @@
 			text-transform: uppercase;
 		}
 
-		a:hover, button:hover {
-			background: palegreen;
+		a:hover, button:hover { background: palegreen }
+		button#del-btn:hover { background: lightsalmon }
+		a#abt-lnk:hover { background: khaki }
+
+		a:disabled, button:disabled {
+			color: gray;
+			background: gainsboro;
+			pointer-events: none;
 		}
 
 		header {
@@ -76,8 +82,9 @@
 
 		main input,
 		main h3 {
-			min-width: 300px;
+			min-width: 320px;
 			padding: 5px 10px;
+			border-radius: 8px;
 			font-size: 20px;
 		}
 
@@ -89,13 +96,13 @@
 <body>
 	<header>
 		<div>
-			<button id="prev-survey" disabled><<</button>
+			<button id="prev-survey" disabled ><<</button>
 			<h3>Survey <span id="survey-num">1</span></h3>
-			<button id="next-survey" disabled>>></button>
+			<button id="next-survey" disabled >>></button>
 		</div>
 		<div>
-			<button id="del-btn" disabled>Del</button>
-			<a href="about/">About</a>
+			<button id="del-btn" disabled >Del</button>
+			<a id="abt-lnk" href="about/">About</a>
 		</div>
 	</header>
 	<main>
