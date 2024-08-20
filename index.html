@@ -114,6 +114,52 @@
 		</div>
 	</main>
 	<footer></footer>
-	<script></script>
+	<script>
+		const nav = {
+			prev: document.getElementById('prev-survey'),
+			next: document.getElementById('next-survey')
+		}
+
+		const storage = window.localStorage || (() => {
+			const store = {}
+
+			const setItem = (key, value) => {
+				if (store.hasOwnProperty(key)) {
+					if (typeof store[key] === typeof value)
+						store[key] += value
+					else
+						return { status: false, err: `type mismatch: ${store[key]} and ${value}` }
+					return store[key]
+				}
+
+				store[key] = value
+				return store[key]
+			}
+
+			const getItem = (key) => {
+				if (!store.hasOwnProperty(key))
+					return { status: false, err: `${key} does not exist` }
+				return store[key]
+			}
+
+			const removeItem = (key) => {
+				if (!store.hasOwnProperty(key))
+					return { status: false, err: `${key} does not exist` }
+				const val = store[key]
+				delete store[key]
+				return val
+			}
+
+			const clear = () => Object.keys(store).forEach(key => delete store[key])
+
+			return {
+				setItem,
+				getItem,
+				removeItem,
+				clear
+			}
+		})()
+
+	</script>
 </body>
 </html>
