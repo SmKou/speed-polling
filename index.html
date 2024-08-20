@@ -89,7 +89,15 @@
 		}
 
 		footer {
+			position: relative;
 		}
+
+		.app-status {
+			position: absolute;
+			right: 12px;
+		}
+
+		#local-stat {}
     </style>
     <script src="https://unpkg.com/htmx.org@2.0.2"></script>
 </head>
@@ -113,7 +121,11 @@
 			<input id="survey-ipt" />
 		</div>
 	</main>
-	<footer></footer>
+	<footer>
+		<div id="survey-ans"></div>
+		<span class="app-status" id="local-stat"></span>
+		<span class="app-status" id="server-stat"></span>
+	</footer>
 	<script>
 		const nav = {
 			prev: document.getElementById('prev-survey'),
@@ -160,6 +172,7 @@
 			}
 		})()
 
+		const surveys = {}
 	</script>
 </body>
 </html>
